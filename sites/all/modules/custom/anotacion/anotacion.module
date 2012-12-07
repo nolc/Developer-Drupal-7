@@ -1,0 +1,45 @@
+<?php
+/**
+ * Implementation of hook_menu().
+*/
+function anotacion_menu() {
+  $items['admin/config/anotacion'] = array(
+    'title' => 'Nodo anotacion',
+    'description' => 'Ajuste las opciones del nodo de anotación.',
+    'position' => 'right',
+    'weight' => -5,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/anotacion/settings'] = array(
+    'title' => 'Anotacion settings',
+    'description' => 'Cambiar el modo de comportarse anotaciones.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('anotacion_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'anotacion.admin.inc',
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_node_load()
+ */
+function anotacion_node_load($nodes, $types) {
+
+  global $user;
+
+  // Check to see if the person viewing the node is the author. If not then
+  // hide the annotation.
+  foreach ($nodes as $node) {
+     if ($user->uid != $node->uid) {
+        unset($node->anotacion);
+     }
+  }
+}
