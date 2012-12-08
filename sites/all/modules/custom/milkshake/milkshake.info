@@ -1,0 +1,5 @@
+name = Milkshake
+description = Demuestra tareas del menú local.
+package = Pro Drupal Development
+core = 7.x
+files[] = milkshake.module
