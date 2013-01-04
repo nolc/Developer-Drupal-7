@@ -1,0 +1,17 @@
+name = Views Schema
+description = Generate table description based on actual database schema
+
+package = Views
+core = 7.x
+
+configure = admin/structure/views/views_schema_modules
+
+
+files[] = views_schema.admin.inc
+dependencies[] = views
+; Information added by drupal.org packaging script on 2012-07-14
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "views_schema"
+datestamp = "1342270820"
+

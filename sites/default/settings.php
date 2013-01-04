@@ -210,14 +210,30 @@
  *   );
  * @endcode
  */
+// $databases = array (
+//   'default' =>
+//   array (
+//     'default' =>
+//     array (
+//       'database' => 'developerdrupal',
+//       'username' => 'neto',
+//       'password' => '121036',
+//       'host' => 'localhost',
+//       'port' => '',
+//       'driver' => 'mysql',
+//       'prefix' => '',
+//     ),
+//   ),
+// );
+
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
       'database' => 'developerdrupal',
-      'username' => 'neto',
-      'password' => '121036',
+      'username' => 'root',
+      'password' => 'root',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
