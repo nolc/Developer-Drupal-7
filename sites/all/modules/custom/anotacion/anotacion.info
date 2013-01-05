@@ -1,8 +1,0 @@
-name = Anotacion
-description = "Permite a los usuarios hacer anotaciones en los nodos."
-package = Pro Drupal Development
-core = 7.x
-files[] = anotacion.module
-files[] = anotacion.install
-files[] = anotacion.admin.inc
-configure = admin/config/content/anotacion/settings
